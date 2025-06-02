@@ -24,9 +24,7 @@ const Navbar = () => {
           <li><a href="#skillPage">Skills</a></li>
           <li><a href="#contactPage">Contact</a></li>
         </ul>
-        <button className="btn1 bg-[#FFCC00] text-black hover:bg-yellow-500 transition-all duration-300 ease-in-out">
-          Download My Cv <i className="ri-download-fill transition-transform duration-300 ease-in-out hover:translate-y-1"></i>
-        </button>
+       
         <i onClick={toggleMenu} className={`menu-icon ${isOpen ? 'ri-close-line' : 'ri-menu-line'}`}></i>
       </nav>
 
