@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  font-family: "Poppins", sans-serif;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+}
+
+.btn1 {
+  padding: 6px 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.h1 {
+  font-size: 30px;
+  user-select: none;
+}
+
+.ri-menu-line {
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+
+.ri-download-fill {
+  font-size: 17px;
+}
+
+li:active {
+  color: #FFCC00;
+}
+
+@media (max-width: 999px) {
+  nav {
+    justify-content: flex-end;
+    height: 60px;
+    padding: 0 20px;
+  }
+  .nav-links,
+  .btn1,
+  .h1 {
+    display: none;
+  }
+  .ri-menu-line {
+    display: block;
+    font-size: 35px;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  transition: right 0.3s ease;
+  z-index: 9999;
+  padding-top: 60px;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.ri-close-line {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: red;
+  cursor: pointer;
+  z-index: 10000;
+}

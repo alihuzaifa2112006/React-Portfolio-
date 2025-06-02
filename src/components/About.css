@@ -1,0 +1,110 @@
+.aboutContainer {
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .contentWrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .leftContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+  }
+  
+  .meetTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #333;
+  }
+  
+  .roleTitle {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: #504e4e;
+    line-height: 1.4;
+  }
+  
+  .description {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.7;
+    color: #555;
+  }
+  
+  .rightImage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .rightImage img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .socialMediaIcons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .socialMediaIcons i {
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .socialMediaIcons a:hover i {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  
+  /* Media Queries for tablet and mobile */
+  @media (max-width: 900px) {
+    .contentWrapper {
+      flex-direction: column-reverse;
+      gap: 30px;
+      text-align: center;
+    }
+  
+    .leftContent {
+      align-items: center;
+    }
+  
+    .rightImage img {
+      max-width: 250px;
+    }
+  
+    .socialMediaIcons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aboutContainer {
+      padding: 60px 20px;
+    }
+  
+    .rightImage img {
+      max-width: 200px;
+    }
+  }
