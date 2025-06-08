@@ -17,6 +17,14 @@ const projects = [
     description: `A responsive task manager allowing users to add, delete, and mark tasks as complete. Built with React and Tailwind CSS to provide an intuitive and stylish UI.`,
   },
   {
+    title: 'Finance Tracker | React Js',
+    image: 'Images/Smart.png',
+    link: 'https://smarttrackerbyali.netlify.app/',
+    techStack: ['HTML', 'CSS',  'React', 'Chart Js', 'Routers'],
+    description: `Smart Tracker is a modern web application built using React that helps users efficiently manage and monitor their tasks, goals, or personal records. Designed with a clean and responsive user interface, this app ensures a smooth experience across devices. It showcases real-time updates, dynamic rendering, and user-friendly features that highlight my front-end development skills.`,
+  }
+  ,
+  {
     title: 'Currency Converter',
     image: 'Images/cc.png',
     link: 'https://currency-converter-psi-blond.vercel.app/',
