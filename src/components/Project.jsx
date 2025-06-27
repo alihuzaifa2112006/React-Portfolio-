@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Project.css';
 
 const projects = [
+  {
+    title: 'Qucik Notes App | Firebase + React |',
+    image: 'Images/noteApp.png',
+    link: 'https://quicknotesapp123.netlify.app/',
+    techStack: ['React', 'Tailwind CSS', 'Firebase'],
+    description: `QuickNotes is a sleek and responsive note-taking web app designed for simplicity and speed. Users can easily create, save, and manage their notes with a clean user interface. It features theme settings, smooth navigation, and a focus on productivity. Built with React and Tailwind CSS, it ensures fast performance and an intuitive experience.`,
+  },
   {
     title: 'React Ecommerce Project with Framer Motion',
     image: 'Images/plant.png',
@@ -20,10 +28,9 @@ const projects = [
     title: 'Finance Tracker | React Js',
     image: 'Images/Smart.png',
     link: 'https://smarttrackerbyali.netlify.app/',
-    techStack: ['HTML', 'CSS',  'React', 'Chart Js', 'Routers'],
+    techStack: ['HTML', 'CSS', 'React', 'Chart Js', 'Routers'],
     description: `Smart Tracker is a modern web application built using React that helps users efficiently manage and monitor their tasks, goals, or personal records. Designed with a clean and responsive user interface, this app ensures a smooth experience across devices. It showcases real-time updates, dynamic rendering, and user-friendly features that highlight my front-end development skills.`,
-  }
-  ,
+  },
   {
     title: 'Currency Converter',
     image: 'Images/cc.png',
@@ -62,43 +69,88 @@ const projects = [
 ];
 
 const Project = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <div className="projectPage" id="projectPage">
-      <div className="heading">
-        <h1 className="font-bold text-5xl text-center mt-2">Projects 💻</h1>
-      </div>
+      <motion.div 
+        className="heading"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h1>Projects 💻</h1>
+      </motion.div>
 
       <div className="projects">
-        {projects.map((proj, index) => (
-          <div key={index} className="project project-1 flex flex-col md:flex-row mb-8">
-            <div className="leftPro flex items-center justify-center">
-              <img src={proj.image} alt={proj.title} className="w-120" />
+        {displayedProjects.map((proj, index) => (
+          <motion.div
+            key={index}
+            className="project"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -5 }}
+          >
+            <div className="leftPro">
+              <motion.img 
+                src={proj.image} 
+                alt={proj.title}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              />
             </div>
-            <div className="rightPro p-4">
-              <h1 className="font-bold text-3xl mb-2">{proj.title}</h1>
-
-              <div className="text-gray-800">
-                <p className="font-semibold">Tech Stack Used:</p>
-                <div className="spansDiv flex flex-wrap gap-2 mt-1">
+            <div className="rightPro">
+              <h1>{proj.title}</h1>
+              <div className="tech-stack">
+                <p>Tech Stack Used:</p>
+                <div className="spansDiv">
                   {proj.techStack.map((tech, idx) => (
-                    <span key={idx} className="bg-gray-100 px-2 py-1 rounded shadow text-sm">
+                    <motion.span
+                      key={idx}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>
-
-              <p className="about text-gray-700 mt-4">{proj.description}</p>
-
-              <button className="btn2 bg-black text-white mt-4 px-4 py-2 rounded shadow hover:bg-gray-800 transition">
-                <a target="_blank" rel="noopener noreferrer" href={proj.link}>
-                  View Project <i className="ri-arrow-right-fill"></i>
-                </a>
-              </button>
+              <p className="about">{proj.description}</p>
+              <motion.a
+                href={proj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Project <i className="ri-arrow-right-fill"></i>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
+
+      {projects.length > 4 && (
+        <motion.div
+          className="show-more-container"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <motion.button
+            onClick={() => setShowAll(!showAll)}
+            className="show-more-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {showAll ? 'Show Less' : 'Show More'}
+          </motion.button>
+        </motion.div>
+      )}
     </div>
   );
 };
