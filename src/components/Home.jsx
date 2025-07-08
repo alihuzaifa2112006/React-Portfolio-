@@ -7,6 +7,12 @@ const Home = () => {
     const projectPage = document.getElementById('projectPage');
     projectPage.scrollIntoView({ behavior: 'smooth' });
   };
+  const HandleDelteBtn = ()=>{
+    const link = document.createElement("a");
+    link.href = '/CBV_React.pdf'
+    link.download = "CBV_React.pdf"; 
+       link.click();
+  }
 
   return (
     <div className='HomeBox'>
@@ -59,9 +65,15 @@ const Home = () => {
     </motion.p>
           </div>
         </div>
-        <button onClick={scrollToProjectPage} className='btn2'>
+        <div className="homeBtns">
+ <button onClick={scrollToProjectPage} className='btn2'>
           View Projects <i className="ri-arrow-right-fill arrowIcon"></i>
         </button>
+        <button className='btn3' onClick={HandleDelteBtn} > 
+          Download CV
+        </button>
+        </div>
+       
       </div>
     </div>
   )
