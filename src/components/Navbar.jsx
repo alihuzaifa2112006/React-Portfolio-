@@ -16,11 +16,13 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex p-4 bg-black text-white justify-around fixed top-0 w-full z-50 shadow-md">
-        <h1 className="h1 font-bold text-xl">MyArt</h1>
+        <h1 className="h1 font-bold text-xl">Portfolio</h1>
         <ul className="flex flex-row gap-12 nav-links">
           <li><a href="#">Home</a></li>
+          {/* Exp_Sec */}
           <li><a href="#about">About</a></li>
           <li><a href="#projectPage">Projects</a></li>
+          <li><a href="#Exp_Sec">Experiences</a></li>
           <li><a href="#skillPage">Skills</a></li>
           <li><a href="#contactPage">Contact</a></li>
         </ul>

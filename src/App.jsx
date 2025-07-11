@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 
 
 import { FormspreeProvider } from '@formspree/react';
+import Exp_Section from './components/Exp_Section';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
      
 
      </div>
+     <Exp_Section/>
       < Contact  />
      
          < Footer /> 

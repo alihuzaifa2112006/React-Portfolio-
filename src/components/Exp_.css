@@ -1,0 +1,215 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.Exp_Section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+  padding: 40px 16px;
+}
+
+/* Heading */
+.Exp_Heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.iconDiv {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.Exp_Title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: bold;
+  background: linear-gradient(to right, #4fd1c5, #38b2ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Container */
+.Exp_Container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Experience Box */
+.Exp_Box {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  justify-content: center;
+  padding: 20px;
+  cursor: pointer;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Exp_Box:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.showMoreBtn{
+  background-color: #212121;
+  color: #ebe5e5;
+  padding: 12px ;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  height: 50px;
+  font-size: 16px;
+gap: 5px;
+cursor: pointer;
+
+}
+.showMoreWrapper {
+  width: 100%;
+  max-width: 900px; /* same as .Exp_Box */
+ align-items: center;
+  display: flex;
+  justify-content: flex-start; /* aligns it to left */
+}
+
+/* Left Section */
+.Exp_Left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.company-name {
+  color: #ffffff;
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Middle line */
+.Exp_Middle {
+  display: none;
+}
+
+.Exp_Line {
+  width: 2px;
+  background-color: #4b5563;
+  height: 100%;
+}
+
+/* Right Section */
+.Exp_Right {
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  word-break: break-word;
+}
+
+.Exp_Date {
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.job-role {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.Exp_Desc {
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  color: #d1d5db;
+  margin-top: 8px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .Exp_Box {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 30px;
+  }
+  
+  .Exp_Left {
+    width: 30%;
+    text-align: left;
+    align-items: flex-start;
+    margin-bottom: 0;
+    padding-right: 20px;
+  }
+  
+  .Exp_Middle {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    height: auto;
+    min-height: 150px;
+  }
+  
+  .Exp_Right {
+    width: 70%;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .company-logo {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .Exp_Box {
+    padding: 40px 50px;
+  }
+  
+  .Exp_Desc {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .Exp_Box {
+    padding: 16px;
+  }
+  
+  .Exp_Desc {
+    text-align: center;
+  }
+  
+  .Exp_Heading {
+    margin-bottom: 30px;
+  }
+}
